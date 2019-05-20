@@ -19,6 +19,23 @@ class LigneCommandeRepository extends ServiceEntityRepository
         parent::__construct($registry, LigneCommande::class);
     }
 
+    public function findLine($idcommande):array
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('SELECT l FROM App\Entity\LigneCommande l where l.commande= :id')
+            ->setParameter('id',$idcommande);
+        return $query->execute();
+    }
+
+    public function update($idProduit)
+    {
+        $queryBuilder = $this->getEntityManager()->createQueryBuilder();
+
+        return $queryBuilder->update('App\Entity\Produit', 'p')->set('p.emplacement', 'vendu')
+            ->where($queryBuilder->expr()->eq('p.id', ':produitId'))
+            ->setParameter('produitId',$idProduit);
+    }
+
     // /**
     //  * @return LigneCommande[] Returns an array of LigneCommande objects
     //  */

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stock{% endblock %}
+
+{% block body %}
+    <h1>STOCK EN BOUTIQUE</h1>
+
+        <table>
+
+        {% for s in stpc %}
+
+            <tr><td><b>Categorie:</b></td> <td>{{ catego }}</td></tr>
+            <tr><td><b>Stock:</b></td><td> {{ s.s }}</td></tr>
+                    <tr><td>
+                            <br><a href="{{ path('read_produit') }}" class="btn btn-warning">OK</a> <button id="btnDetail" class="btn btn-success">Detaille</button></td></tr>
+
+        {% else %}
+            <tr>
+                <td colspan="3">Il n'y a auccun Marchandise</td>
+            </tr>
+        {% endfor %}
+        </table>
+    <hr>
+    <div id="detaille">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Marque</th>
+                <th>Prix</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+        <h3>Detaille</h3>
+        {% for d in detaille %}
+            <tr>
+                <td>{{ d.marque }}</td>
+                <td>{{ d.prix}}</td>
+                <td>
+                    <a href="{{ path('show_produit',{'id':d.id}) }}" id="btnDetail" class="btn btn-secondary">Voir</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Il n'y a auccun Marchandise</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    </div>
+
+{% endblock %}

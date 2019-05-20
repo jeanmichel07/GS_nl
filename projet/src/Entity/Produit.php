@@ -39,7 +39,7 @@ class Produit
     private $prix;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $codeBare;
 
@@ -181,5 +181,10 @@ class Produit
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->codeBare;
     }
 }

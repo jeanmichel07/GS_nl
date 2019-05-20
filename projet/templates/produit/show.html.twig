@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}stock{% endblock %}
+
+{% block body %}
+    <h2>{{ produit.categorie.nomCategorie }} numero {{ produit.id }}</h2>
+    <table>
+        <tr>
+            <td><b>Marque:</b></td>
+            <td>{{ produit.marque }}</td>
+        </tr>
+        <tr>
+            <td><b>Description:</b></td>
+            <td>{{ produit.description }}</td>
+        </tr>
+        <tr>
+            <td><b>Prix:</b></td>
+            <td>{{ produit.prix }}</td>
+        </tr>
+    </table>
+{% endblock %}

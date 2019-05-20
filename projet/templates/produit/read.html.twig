@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}stock{% endblock %}
+
+{% block body %}
+    <h1>Les produits en boutique</h1>
+    <a href="{{ path('create_produit') }}" class="btn btn-primary">Nouvelle stock</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Marchandise</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for p in prod %}
+            <tr>
+                <td>{{ p.categorie.nomCategorie }}</td>
+                <td>
+                    <a href="{{ path('stock',{'id':p.categorie.id,'cate':p.categorie.nomCategorie}) }}" class="btn btn-success">Voir le stock</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Il n'y a auccun Marchandise</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

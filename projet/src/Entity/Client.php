@@ -31,7 +31,7 @@ class Client
     /**
      * @ORM\Column(type="string", length=100, nullable=true)
      */
-    private $telephone;
+    private $adresse;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="client")
@@ -72,14 +72,14 @@ class Client
         return $this;
     }
 
-    public function getTelephone(): ?string
+    public function getAdresse(): ?string
     {
-        return $this->telephone;
+        return $this->adresse;
     }
 
-    public function setTelephone(?string $telephone): self
+    public function setAdresse(?string $adresse): self
     {
-        $this->telephone = $telephone;
+        $this->adresse = $adresse;
 
         return $this;
     }

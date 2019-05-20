@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}stock{% endblock %}
+
+{% block body %}
+<h2>INSERER NOUVELLE STOCK</h2>
+    {{ form_start(form) }}
+    {{ form_row(form.categorie) }}
+    {{ form_row(form.marque) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.prix) }}
+    {{ form_row(form.codeBare) }}
+    <input type="submit" value="Inserer" class="btn btn-primary btn-lg btn-block">
+{{ form_end(form) }}
+{% endblock %}
