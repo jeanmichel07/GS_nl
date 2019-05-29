@@ -19,6 +19,30 @@ class ProduitRepository extends ServiceEntityRepository
         parent::__construct($registry, Produit::class);
     }
 
+    public function findStock($idCategorie)
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery("SELECT COUNT(p) as s FROM App\Entity\Produit p WHERE p.emplacement='stock' and p.categorie=:id")
+        ->setParameter('id',$idCategorie);
+        return $query->execute();
+    }
+    public function findStockdetaille($idCategorie)
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery("SELECT p FROM App\Entity\Produit p WHERE p.emplacement='stock' and p.categorie=:id")
+            ->setParameter('id',$idCategorie);
+        return $query->execute();
+    }
+    public function findProduit()
+    {
+        return $this->createQueryBuilder('p')
+            ->groupBy('p.categorie')
+            ->orderBy('p.categorie', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
     // /**
     //  * @return Produit[] Returns an array of Produit objects
     //  */

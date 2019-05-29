@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}NL_Technology{% endblock %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}
+    <script>
+        function imprimer(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+    <style>
+        .code
+        {
+            margin-top: 45px;
+            width: 200px;
+        }
+        #ligne{
+            float: right;
+            position: relative;
+            margin-top: -90px;
+            border: #868686 solid 1px;
+            width: 70%;
+            height: 100%;
+            border-radius: 2px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 10px;
+        }
+        #imp
+        {
+            float: right;
+            margin-top: -131px;
+        }
+    </style>
+    <div class="code">
+    {{ form_start(form) }}
+    {{ form_row(form.produit) }}
+    <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block">
+    {{ form_end(form) }}
+    </div>
+    <button onClick="imprimer('ligne')" id="imp" class="btn btn-secondary">Imprimer</button>
+    <div id="ligne">
+        <br>
+        <h4>Facture de {{ commande.client.nomComplet }}</h4><hr>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Qtt</th>
+                    <th>Designation</th>
+                    <th>Marque</th>
+                    <th>Prix unitaire HT</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for l in line %}
+                <tr>
+                    <td>1</td>
+                    <td>{{ l.produit.categorie.nomCategorie }}</td>
+                    <td>{{ l.produit.marque }}</td>
+                    <td>{{ l.produit.prix }}</td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+{% endblock %}

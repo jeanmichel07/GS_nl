@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+    <h1>Les produits</h1>
+    <a href="{{ path('categorie_new') }}" class="btn btn-primary">Nouvelle categorie</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Categorie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie in categories %}
+            <tr>
+                <td>{{ categorie.id }}</td>
+                <td>{{ categorie.nomCategorie }}</td>
+                <td>
+                    <a href="{{ path('categorie_show', {'id': categorie.id}) }}" class="btn btn-success">show</a>
+                    <a href="{{ path('categorie_edit', {'id': categorie.id}) }}" class="btn btn-info">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Il n'y a auccun categorie</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}
