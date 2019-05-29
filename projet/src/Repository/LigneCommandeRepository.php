@@ -27,14 +27,6 @@ class LigneCommandeRepository extends ServiceEntityRepository
         return $query->execute();
     }
 
-    public function update($idProduit)
-    {
-        $queryBuilder = $this->getEntityManager()->createQueryBuilder();
-
-        return $queryBuilder->update('App\Entity\Produit', 'p')->set('p.emplacement', 'vendu')
-            ->where($queryBuilder->expr()->eq('p.id', ':produitId'))
-            ->setParameter('produitId',$idProduit);
-    }
 
     // /**
     //  * @return LigneCommande[] Returns an array of LigneCommande objects

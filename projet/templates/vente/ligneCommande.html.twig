@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin{% endblock %}
+{% block title %}NL_Technology{% endblock %}
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
@@ -23,13 +23,18 @@
             float: right;
             position: relative;
             margin-top: -90px;
-            border: #222222 solid 1px;
+            border: #868686 solid 1px;
             width: 70%;
             height: 100%;
             border-radius: 2px;
             padding-left: 25px;
             padding-right: 25px;
             padding-top: 10px;
+        }
+        #imp
+        {
+            float: right;
+            margin-top: -131px;
         }
     </style>
     <div class="code">
@@ -38,7 +43,9 @@
     <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block">
     {{ form_end(form) }}
     </div>
+    <button onClick="imprimer('ligne')" id="imp" class="btn btn-secondary">Imprimer</button>
     <div id="ligne">
+        <br>
         <h4>Facture de {{ commande.client.nomComplet }}</h4><hr>
 
         <table class="table">
@@ -46,6 +53,7 @@
                 <tr>
                     <th>Qtt</th>
                     <th>Designation</th>
+                    <th>Marque</th>
                     <th>Prix unitaire HT</th>
                     <th>Total</th>
                 </tr>
@@ -53,15 +61,16 @@
             <tbody>
             {% for l in line %}
                 <tr>
-                    <td></td>
+                    <td>1</td>
                     <td>{{ l.produit.categorie.nomCategorie }}</td>
-                    <td><input type="text" value=""></td>
+                    <td>{{ l.produit.marque }}</td>
+                    <td>{{ l.produit.prix }}</td>
                 </tr>
 
             {% endfor %}
             </tbody>
         </table>
-        <button onClick="imprimer('ligne')">Imprimer</button>
+
     </div>
 
 {% endblock %}

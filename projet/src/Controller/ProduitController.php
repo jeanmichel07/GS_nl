@@ -76,6 +76,15 @@ class ProduitController extends AbstractController
     }
 
     /**
+     * @Route("/update/produit/{id}",name="update_produit")
+     * @param Produit $produit
+     */
+    public function update(Produit $produit)
+    {
+
+    }
+
+    /**
      * @Route("/read/produit",name="read_produit")
      */
     public function read()

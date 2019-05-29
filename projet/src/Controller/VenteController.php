@@ -103,17 +103,4 @@ class VenteController extends AbstractController
         ]);
     }
 
-    /**
-     * @param $id
-     * @Route("/update/produit/{id}")
-     */
-    public function updateProduit(Produit $produit)
-    {
-        $this->repository->update($produit->getId());
-        $em=$this->getDoctrine()->getManager();
-        $em->persist($produit);
-        $em->flush();
-
-    }
-
 }
