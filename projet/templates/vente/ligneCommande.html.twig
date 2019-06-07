@@ -32,85 +32,100 @@
             padding-right: 25px;
             padding-top: 10px;
         }
+        #be{
+            float: right;
+            margin-top: -130px;
+        }
     </style>
-    <div class="code">
-    {{ form_start(form) }}
-    {{ form_row(form.produit) }}
-    <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block">
-    {{ form_end(form) }}
-    </div>
-    <div id="ligne">
-<<<<<<< HEAD
-        <br>
-
-        <div class="alert alert-dismissible alert-secondary" style="margin-top:-30px ">
-            <h1 align="center"> <strong>FACTURE</strong></h1>
+    <div class="container">
+        <div class="col-4 code">
+            {{ form_start(form) }}
+            {{ form_row(form.produit) }}
+            <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block">
+            {{ form_end(form) }}
         </div>
-    <div class="row">
+            <button onClick="imprimer('ligne')" id="be" class="btn btn-secondary">Imprimer</button>
+        <div id="ligne"   align="left">
 
-        <div class=" col-5" >
-            <div class="card text-black bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-
-                    <p class="card-text"><br>
-                        Réference:<br>
-                        Date:
-
-                        {{ commande.dateAchat |date("d/m/Y") }}<br>
-                        Nom de client: {{ commande.client.nomComplet }}
-                </div>
+            <div class="alert alert-dismissible alert-secondary" >
+                <h1 align="center"> <strong>FACTURE</strong></h1>
             </div>
 
-        </div>
+            <div class="row">
 
-        <div class=" col-3" >
+                <div class=" col-5" >
+                    <div class="card text-black bg-secondary mb-3" style="max-width: 20rem;">
+                        <div class="card-body">
 
+                            <p class="card-text"><br>
+                                Réference:<br>
+                                Date:
 
-        </div>
+                                {{ commande.dateAchat |date("d/m/Y") }}<br>
+                                Nom de client: {{ commande.client.nomComplet }}
+                        </div>
+                    </div>
+                </div>
 
-        <div class=" col-4" >
-            <div class="card text-black bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">NL Technologie</h5>
-                    <p class="card-text">ANJANAHARY<br>
-                        101 ANTANANARIVO<br>
-                        Tél:0343315976<br>
-                        Page FB:NL Technologie</p>
+                <div class=" col-3" >
+                </div>
 
+                <div class=" col-4" >
+                    <div class="card text-black bg-secondary mb-3" style="max-width: 20rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">NL Technologie</h5>
+                            <p class="card-text">ANJANAHARY<br>
+                                101 ANTANANARIVO<br>
+                                Tél:0343315976<br>
+                                Page FB:NL Technologie</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+    <hr>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                    <tr class="table-info">
+                        <th>Quantité</th>
+                        <th>Designation</th>
+                        <th>Prix unitaire HT</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for l in line %}
+                        <tr>
+                            <td>{{ commande.id }} </td>
+                            <td>{{ l.produit.categorie.nomCategorie }}</td>
+                            <td> {{ l.produit.prix }} Ar</td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+
+                </table>
+            </div>
+             <div class="row">
+                <hr>
+                <table border="2">
+                    <thead>
+                    <tr>
+                        <th>Total HT </th>
+                        <th>{% for l in line %}{{ l.produit.prix }} Ar {% endfor %}</th>
+                    </tr>
+                    <tr>
+                        <th>T.V.A 0</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>Total TTC</th>
+                        <th>{% for l in line %}{{ l.produit.prix }} Ar{% endfor %}</th>
+                    </tr>
+                    </thead>
+                    </table>
+            </div>
         </div>
-    </div>
 
-
-
-        <hr>
-        <table class="table primary">
-=======
-        <h4>Facture de {{ commande.client.nomComplet }}</h4><hr>
-
-        <table class="table">
->>>>>>> 92ba9e3d3776e4c5292e1d13b9af21eb6f3b08e3
-            <thead>
-                <tr>
-                    <th>Qtt</th>
-                    <th>Designation</th>
-                    <th>Prix unitaire HT</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for l in line %}
-                <tr>
-                    <td></td>
-                    <td>{{ l.produit.categorie.nomCategorie }}</td>
-                    <td><input type="text" value=""></td>
-                </tr>
-
-            {% endfor %}
-            </tbody>
-        </table>
-        <button onClick="imprimer('ligne')">Imprimer</button>
-    </div>
-
+   <div>
 {% endblock %}
