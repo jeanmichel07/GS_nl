@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NL_Technology{% endblock %}
+{% block title %}Admin{% endblock %}
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
@@ -23,7 +23,7 @@
             float: right;
             position: relative;
             margin-top: -90px;
-            border: #868686 solid 1px;
+            border: #222222 solid 1px;
             width: 70%;
             height: 100%;
             border-radius: 2px;
@@ -31,69 +31,21 @@
             padding-right: 25px;
             padding-top: 10px;
         }
-        #imp
-        {
-            float: right;
-            margin-top: -131px;
-        }
     </style>
-
-
     <div class="code">
     {{ form_start(form) }}
     {{ form_row(form.produit) }}
     <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block">
     {{ form_end(form) }}
     </div>
-    <button onClick="imprimer('ligne')" id="imp" class="btn btn-secondary">Imprimer</button>
     <div id="ligne">
-        <br>
+        <h4>Facture de {{ commande.client.nomComplet }}</h4><hr>
 
-        <div class="alert alert-dismissible alert-secondary" style="margin-top:-30px ">
-            <h1 align="center"> <strong>FACTURE</strong></h1>
-        </div>
-    <div class="row">
-
-        <div class=" col-5" >
-            <div class="card text-black bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-
-                    <p class="card-text"><br>
-                        Réference:<br>
-                        Date:{{ l.commande.dateAchat |date("m/d/Y") }}<br>
-                        Nom de client: {{ commande.client.nomComplet }}
-                </div>
-            </div>
-
-        </div>
-
-        <div class=" col-3" >
-
-
-        </div>
-
-        <div class=" col-4" >
-            <div class="card text-black bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title">NL Technologie</h5>
-                    <p class="card-text">ANJANAHARY<br>
-                        101 ANTANANARIVO<br>
-                        Tél:0343315976<br>
-                        Page FB:NL Technologie</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-        <hr>
-        <table class="table primary">
+        <table class="table">
             <thead>
-                <tr class="table-info">
-                    <th>Quantité</th>
+                <tr>
+                    <th>Qtt</th>
                     <th>Designation</th>
-                    <th>Marque</th>
                     <th>Prix unitaire HT</th>
                     <th>Total</th>
                 </tr>
@@ -101,51 +53,15 @@
             <tbody>
             {% for l in line %}
                 <tr>
-                    <td>1</td>
-                    <td>{{ l.produit.categorie.nomCategorie }}</td>
-                    <td>{{ l.produit.marque }}</td>
-                    <td>{{ l.produit.prix }}</td>
                     <td></td>
+                    <td>{{ l.produit.categorie.nomCategorie }}</td>
+                    <td><input type="text" value=""></td>
                 </tr>
 
             {% endfor %}
             </tbody>
         </table>
-        <div>
-                <table class="border-success">
-
-                    <tbody>
-
-                    <tr>
-
-                        <td>Total HT</td>
-                        <td>{% for l in line %}{{ l.produit.prix }}{% endfor %}</td>
-
-                    </tr>
-                        <tr>
-
-
-                            <td>T.V.A 0</td>
-                            <td></td>
-                        </tr>
-                    <tr>
-
-                        <td>Totale TTC</td>
-
-                        <td>{% for l in line %}
-
-                                {{ l.produit.prix }}
-
-                            {% endfor %}
-                        </td>
-
-                    </tr>
-
-
-                    </tbody>
-                </table>
-    </div>
-
+        <button onClick="imprimer('ligne')">Imprimer</button>
     </div>
 
 {% endblock %}
