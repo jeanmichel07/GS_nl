@@ -12,6 +12,7 @@
             window.print();
             document.body.innerHTML = originalContents;
         }
+
     </script>
     <style>
         .code
@@ -60,7 +61,9 @@
 
                     <p class="card-text"><br>
                         Réference:<br>
-                        Date:{{ l.commande.dateAchat |date("m/d/Y") }}<br>
+                        Date:
+
+                        {{ commande.dateAchat |date("d/m/Y") }}<br>
                         Nom de client: {{ commande.client.nomComplet }}
                 </div>
             </div>
@@ -80,6 +83,7 @@
                         101 ANTANANARIVO<br>
                         Tél:0343315976<br>
                         Page FB:NL Technologie</p>
+
                 </div>
             </div>
         </div>
