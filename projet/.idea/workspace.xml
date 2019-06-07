@@ -4,6 +4,9 @@
     <list default="true" id="3ac50400-18eb-4f59-8714-ec53a42934a0" name="Default Changelist" comment="">
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.yaml" afterDir="false" />
 =======
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
@@ -16,6 +19,7 @@
       <change beforePath="$PROJECT_DIR$/templates/produit/stock.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/produit/stock.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/vente/ligneCommande.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/vente/ligneCommande.html.twig" afterDir="false" />
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +29,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -32,10 +39,14 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/VenteController.php">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+            <state relative-caret-position="1581">
+=======
+<<<<<<< HEAD
             <state relative-caret-position="153">
               <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
 =======
             <state relative-caret-position="437">
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
               <caret line="104" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#34#56#0#PHP" expanded="true" />
@@ -44,11 +55,29 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/vente/ligneCommande.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/ProduitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+            <state relative-caret-position="408">
+              <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding>
                 <element signature="e#34#59#0#PHP" expanded="true" />
               </folding>
@@ -66,7 +95,7 @@
 =======
         <entry file="file://$PROJECT_DIR$/src/Controller/StockController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
+            <state relative-caret-position="680">
               <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
               <folding>
                 <element signature="e#34#59#0#PHP" expanded="true" />
@@ -85,7 +114,7 @@
 =======
         <entry file="file://$PROJECT_DIR$/src/Repository/LigneCommandeRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="442">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="e#34#63#0#PHP" expanded="true" />
@@ -104,7 +133,7 @@
 =======
         <entry file="file://$PROJECT_DIR$/src/Repository/ProduitRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="493">
               <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
             </state>
@@ -120,7 +149,7 @@
 =======
         <entry file="file://$PROJECT_DIR$/templates/produit/stock.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="748">
               <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
             </state>
@@ -441,27 +470,39 @@
       <workItem from="1558261278457" duration="1699000" />
       <workItem from="1558276259505" duration="25467000" />
       <workItem from="1558419112018" duration="3587000" />
+<<<<<<< HEAD
+      <workItem from="1559119612317" duration="3749000" />
+      <workItem from="1559802634360" duration="1681000" />
+=======
       <workItem from="1559119612317" duration="1979000" />
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
 <<<<<<< HEAD
+    <option name="totallyTimeSpent" value="85327000" />
+=======
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="8466000" />
 =======
     <option name="totallyTimeSpent" value="81876000" />
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
+<<<<<<< HEAD
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26928896" />
+=======
 <<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20877458" />
 =======
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2655068" />
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -713,6 +754,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/Controller/VenteController.php">
+=======
     <entry file="file://$PROJECT_DIR$/src/Entity/Commande.php">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -732,6 +776,61 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#34#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ProduitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+          <folding>
+            <element signature="e#34#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/StockController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
+          <folding>
+            <element signature="e#34#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/LigneCommandeRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#34#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ProduitRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/produit/stock.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" selection-start-line="28" selection-end-line="28" />
@@ -745,65 +844,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="15">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/vente/ligneCommande.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/LigneCommandeRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#34#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ProduitRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/produit/stock.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/StockController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="44" column="33" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <element signature="e#34#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/VenteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="e#34#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ProduitController.php">
-      <provider selected="true" editor-type-id="text-editor">
+=======
         <state relative-caret-position="114">
           <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
           <folding>
             <element signature="e#34#59#0#PHP" expanded="true" />
           </folding>
 >>>>>>> af029b8d7ecac582c86b1443be1652c7de201289
+>>>>>>> 09c80f37bcd5dcf9d8fc4a15feb0bf5a3350712f
         </state>
       </provider>
     </entry>

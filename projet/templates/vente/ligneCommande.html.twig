@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}NL_Technology{% endblock %}
+{% block title %}Admin{% endblock %}
 {% block stylesheets %}
 {% endblock %}
 {% block body %}
@@ -24,7 +24,7 @@
             float: right;
             position: relative;
             margin-top: -90px;
-            border: #868686 solid 1px;
+            border: #222222 solid 1px;
             width: 70%;
             height: 100%;
             border-radius: 2px;
@@ -32,22 +32,15 @@
             padding-right: 25px;
             padding-top: 10px;
         }
-        #imp
-        {
-            float: right;
-            margin-top: -131px;
-        }
     </style>
-
-
     <div class="code">
     {{ form_start(form) }}
     {{ form_row(form.produit) }}
     <input type="submit" value="Ajouter" class="btn btn-primary btn-lg btn-block">
     {{ form_end(form) }}
     </div>
-    <button onClick="imprimer('ligne')" id="imp" class="btn btn-secondary">Imprimer</button>
     <div id="ligne">
+<<<<<<< HEAD
         <br>
 
         <div class="alert alert-dismissible alert-secondary" style="margin-top:-30px ">
@@ -93,11 +86,15 @@
 
         <hr>
         <table class="table primary">
+=======
+        <h4>Facture de {{ commande.client.nomComplet }}</h4><hr>
+
+        <table class="table">
+>>>>>>> 92ba9e3d3776e4c5292e1d13b9af21eb6f3b08e3
             <thead>
-                <tr class="table-info">
-                    <th>Quantité</th>
+                <tr>
+                    <th>Qtt</th>
                     <th>Designation</th>
-                    <th>Marque</th>
                     <th>Prix unitaire HT</th>
                     <th>Total</th>
                 </tr>
@@ -105,51 +102,15 @@
             <tbody>
             {% for l in line %}
                 <tr>
-                    <td>1</td>
-                    <td>{{ l.produit.categorie.nomCategorie }}</td>
-                    <td>{{ l.produit.marque }}</td>
-                    <td>{{ l.produit.prix }}</td>
                     <td></td>
+                    <td>{{ l.produit.categorie.nomCategorie }}</td>
+                    <td><input type="text" value=""></td>
                 </tr>
 
             {% endfor %}
             </tbody>
         </table>
-        <div>
-                <table class="border-success">
-
-                    <tbody>
-
-                    <tr>
-
-                        <td>Total HT</td>
-                        <td>{% for l in line %}{{ l.produit.prix }}{% endfor %}</td>
-
-                    </tr>
-                        <tr>
-
-
-                            <td>T.V.A 0</td>
-                            <td></td>
-                        </tr>
-                    <tr>
-
-                        <td>Totale TTC</td>
-
-                        <td>{% for l in line %}
-
-                                {{ l.produit.prix }}
-
-                            {% endfor %}
-                        </td>
-
-                    </tr>
-
-
-                    </tbody>
-                </table>
-    </div>
-
+        <button onClick="imprimer('ligne')">Imprimer</button>
     </div>
 
 {% endblock %}
