@@ -96,9 +96,15 @@
                     <tbody>
                     {% for l in line %}
                         <tr>
+<<<<<<< HEAD
                             <td>{{ commande.id }} </td>
                             <td>{{ l.produit.categorie.nomCategorie }}</td>
                             <td> {{ l.produit.prix }} Ar</td>
+=======
+                            <td></td>
+                            <td>{{ l.produit.categorie.nomCategorie }}</td>
+                            <td> {{ commande.client.nomComplet }}</td>
+>>>>>>> b852a033379f7327e66e9defd33215efcfef4058
                         </tr>
 
                     {% endfor %}
@@ -112,7 +118,11 @@
                     <thead>
                     <tr>
                         <th>Total HT </th>
+<<<<<<< HEAD
                         <th>{% for l in line %}{{ l.produit.prix }} Ar {% endfor %}</th>
+=======
+                        <th></th>
+>>>>>>> b852a033379f7327e66e9defd33215efcfef4058
                     </tr>
                     <tr>
                         <th>T.V.A 0</th>
@@ -120,7 +130,11 @@
                     </tr>
                     <tr>
                         <th>Total TTC</th>
+<<<<<<< HEAD
                         <th>{% for l in line %}{{ l.produit.prix }} Ar{% endfor %}</th>
+=======
+                        <th></th>
+>>>>>>> b852a033379f7327e66e9defd33215efcfef4058
                     </tr>
                     </thead>
                     </table>
