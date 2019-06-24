@@ -26,6 +26,7 @@ class LigneCommande
      */
     private $produit;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,4 +55,6 @@ class LigneCommande
 
         return $this;
     }
+
+
 }

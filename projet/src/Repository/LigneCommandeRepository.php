@@ -35,6 +35,15 @@ class LigneCommandeRepository extends ServiceEntityRepository
             ->where($queryBuilder->expr()->eq('p.id', ':produitId'))
             ->setParameter('produitId',$idProduit);
     }
+   public function findLigneCommande()
+    {
+        return $this->createQueryBuilder('l')
+            ->orderBy('l.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
     // /**
     //  * @return LigneCommande[] Returns an array of LigneCommande objects

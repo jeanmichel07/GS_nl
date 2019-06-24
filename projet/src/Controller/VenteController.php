@@ -20,12 +20,12 @@ class VenteController extends AbstractController
     /**
      * @var LigneCommandeRepository
      */
-    private $repository;
+    private $LigneCommandeRepository;
 
-    public function __construct(LigneCommandeRepository $repository)
+    public function __construct(LigneCommandeRepository $LigneCommandeRepository)
     {
 
-        $this->repository = $repository;
+        $this->LigneCommandeRepository = $LigneCommandeRepository;
     }
 
     /**
@@ -113,7 +113,15 @@ class VenteController extends AbstractController
         $em=$this->getDoctrine()->getManager();
         $em->persist($produit);
         $em->flush();
-
     }
-
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/liste/vente/" ,name="liste_vente")
+     */
+        public function liste(){
+        $liste=$this->LigneCommandeRepository->findLigneCommande();
+        return $this->render('vente/liste.html.twig',[
+            'ln'=>$liste,
+        ]);
+    }
 }
