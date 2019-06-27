@@ -20,12 +20,12 @@ class VenteController extends AbstractController
     /**
      * @var LigneCommandeRepository
      */
-    private $LigneCommandeRepository;
+    private $repository;
 
-    public function __construct(LigneCommandeRepository $LigneCommandeRepository)
+    public function __construct(LigneCommandeRepository $repository)
     {
 
-        $this->LigneCommandeRepository = $LigneCommandeRepository;
+        $this->repository = $repository;
     }
 
     /**
