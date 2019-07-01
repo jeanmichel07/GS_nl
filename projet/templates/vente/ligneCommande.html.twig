@@ -58,7 +58,7 @@
                         <div class="card-body">
 
                             <p class="card-text"><br>
-                                Réference:<br>
+                                Réference: {{ commande.id }}<br>
                                 Date:
 
                                 {{ commande.dateAchat |date("d/m/Y") }}<br>
@@ -89,55 +89,33 @@
                     <tr class="table-info">
                         <th>Quantité</th>
                         <th>Designation</th>
+                        <th>Marque</th>
                         <th>Prix unitaire HT</th>
-                        <th>Total</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for l in line %}
                         <tr>
 
-                            <td>{{ commande.id }} </td>
+                            <td>1</td>
                             <td>{{ l.produit.categorie.nomCategorie }}</td>
+                            <td>{{ l.produit.marque }}</td>
                             <td> {{ l.produit.prix }} Ar</td>
-
-                            <td></td>
-                            <td>{{ l.produit.categorie.nomCategorie }}</td>
-                            <td> {{ commande.client.nomComplet }}</td>
 
                         </tr>
 
                     {% endfor %}
+                    <tr><td>
+                            Total
+                        </td><td>----</td><td>----</td><td>{% for l in total %}{{ l.t }} Ar {% endfor %}</td>
+                    </tr>
                     </tbody>
 
                 </table>
             </div>
              <div class="row">
                 <hr>
-                <table border="2">
-                    <thead>
-                    <tr>
-                        <th>Total HT </th>
 
-                        <th>{% for l in line %}{{ l.produit.prix }} Ar {% endfor %}</th>
-
-                        <th></th>
-
-                    </tr>
-                    <tr>
-                        <th>T.V.A 0</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>Total TTC</th>
-
-                        <th>{% for l in line %}{{ l.produit.prix }} Ar{% endfor %}</th>
-
-                        <th></th>
-
-                    </tr>
-                    </thead>
-                    </table>
             </div>
         </div>
 

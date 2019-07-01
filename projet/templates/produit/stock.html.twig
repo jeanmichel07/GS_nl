@@ -42,7 +42,8 @@
                 <td>{{ d.marque }}</td>
                 <td>{{ d.prix}}</td>
                 <td>
-                    <a href="{{ path('show_produit',{'id':d.id}) }}" id="btnDetail" class="btn btn-secondary">Voir</a>
+                    <a href="{{ path('show_produit',{'id':d.id}) }}" id="btnDetail" class="btn btn-primary">Voir</a>
+                    <a href="{{ path('update_produit',{'id':d.id}) }}" id="btnDetail" class="btn btn-secondary">Modifier</a>
                 </td>
             </tr>
         {% else %}

@@ -38,11 +38,19 @@ class LigneCommandeRepository extends ServiceEntityRepository
    public function findLigneCommande()
     {
         return $this->createQueryBuilder('l')
-            ->orderBy('l.id', 'ASC')
+            ->orderBy('l.id', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
             ;
+    }
+
+    public function sumcomm($idcommande):array
+    {
+        $em=$this->getEntityManager();
+        $query=$em->createQuery('SELECT SUM(p.prix) as t FROM App\Entity\produit p INNER JOIN App\Entity\LigneCommande l where p.id=l.produit and l.commande= :id')
+            ->setParameter('id',$idcommande);
+        return $query->execute();
     }
 
     // /**

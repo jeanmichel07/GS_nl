@@ -33,12 +33,14 @@ class StockController extends AbstractController
 
     /**
      * @Route("/stock/categorie/{id}/?categorie={cate}", name="stock")
+     * @param Categorie $categorie
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function stockPC(Categorie $categorie,Request $request)
     {
         $stockpc=$this->produitRepository->findStock($categorie->getId());
         $detaille=$this->produitRepository->findStockdetaille($categorie->getId());
-        dump($request);
         return $this->render('produit/stock.html.twig',[
             'stpc'=>$stockpc,
             'catego'=>$request->get('categorie'),

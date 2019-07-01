@@ -116,12 +116,12 @@ class Produit
         return $this;
     }
 
-    public function getCodeBare(): ?int
+    public function getCodeBare(): ?string
     {
         return $this->codeBare;
     }
 
-    public function setCodeBare(int $codeBare): self
+    public function setCodeBare(string $codeBare): self
     {
         $this->codeBare = $codeBare;
 

@@ -3,7 +3,9 @@
 {% block title %}stock{% endblock %}
 
 {% block body %}
-    <h2>{{ produit.categorie.nomCategorie }} numero {{ produit.id }}</h2>
+<br>
+    <h2>Référence de {{ produit.categorie.nomCategorie }}:
+        {{ produit.codeBare }}</h2>
     <table>
         <tr>
             <td><b>Marque:</b></td>
@@ -11,11 +13,13 @@
         </tr>
         <tr>
             <td><b>Description:</b></td>
-            <td>{{ produit.description }}</td>
+            <td>{{ produit.description |raw }}</td>
         </tr>
         <tr>
             <td><b>Prix:</b></td>
             <td>{{ produit.prix }}</td>
         </tr>
     </table>
+    <br>
+    <a href="javascript:history.back()" class="btn btn-warning">OK</a>
 {% endblock %}

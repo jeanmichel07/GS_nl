@@ -96,10 +96,12 @@ class VenteController extends AbstractController
         }
 
         $line=$this->repository->findLine($commande->getId());
+        $sum=$this->repository->sumcomm($commande->getId());
         return $this->render('vente/ligneCommande.html.twig',[
             'form'=>$form->createView(),
             'commande'=>$commande,
-            'line'=>$line
+            'line'=>$line,
+            'total'=>$sum
         ]);
     }
 
@@ -119,7 +121,7 @@ class VenteController extends AbstractController
      * @Route("/liste/vente/" ,name="liste_vente")
      */
         public function liste(){
-        $liste=$this->LigneCommandeRepository->findLigneCommande();
+        $liste=$this->repository->findLigneCommande();
         return $this->render('vente/liste.html.twig',[
             'ln'=>$liste,
         ]);

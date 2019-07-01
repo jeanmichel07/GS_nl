@@ -56,7 +56,9 @@ class ProduitController extends AbstractController
             ])
             ->add('description')
             ->add('prix')
-            ->add('codeBare')
+            ->add('codeBare',TextType::class,[
+                'label'=>'Reference'
+            ])
             ->getForm();
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid())
@@ -96,6 +98,49 @@ class ProduitController extends AbstractController
         return $this->render('produit/show.html.twig',[
             'produit'=>$produit
         ]);
+    }
+
+
+    /**
+     * @param Produit $produit
+     * @param Request $request
+     * @return Response
+     * @throws \Exception
+     * @Route("/update/produit/{id}", name="update_produit")
+     */
+    public function update(Produit $produit,Request $request)
+    {
+        $form=$this->createFormBuilder($produit)
+            ->add('categorie',EntityType::class,[
+                'class'=>Categorie::class,
+                'query_builder'=>function(EntityRepository $entityRepository){
+                    return $entityRepository->createQueryBuilder('c')->orderBy('c.nomCategorie','ASC');
+                }
+            ])
+            ->add('marque',TextType::class,[
+                'label'=>'Marque'
+            ])
+            ->add('description')
+            ->add('prix')
+            ->add('codeBare',TextType::class,[
+                'label'=>'Reference'
+            ])
+            ->getForm();
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $produit->setDateSaisi(new \DateTime());
+            $produit->setEmplacement("stock");
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($produit);
+            $em->flush();
+            return $this->redirectToRoute('stock',['id'=>$produit->getCategorie()->getId(),'cate'=>$produit->getCategorie()->getNomCategorie()]);
+        }
+
+        return $this->render('produit/update.html.twig',[
+            'form'=>$form->createView()
+        ]);
+
     }
 
 }
